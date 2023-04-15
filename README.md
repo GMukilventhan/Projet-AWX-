@@ -34,7 +34,7 @@ ansible 2.10.8
   python version = 3.10.6 (main, Mar 10 2023, 10:55:28) [GCC 11.3.0]
   ```
   
-  ## 2- Install Docker
+  ## 2- Installer Docker
   
   - Installer les paquets nécessaires, importer la clé GPG et ajouter le dépôt aux sources APT
 
@@ -76,3 +76,10 @@ TriggeredBy: ● docker.socket
      CGroup: /system.slice/docker.service
              └─962 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
   ```
+
+## 3- Installer Node/NPM
+
+```bash
+sudo apt install -y nodejs npm
+sudo npm install npm --global
+```
