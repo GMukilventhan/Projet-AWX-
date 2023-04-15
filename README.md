@@ -122,3 +122,5 @@ pwgen -N 1 -s 30
 ```bash
 sudo nano inventory
 ```
+
+Faites défiler la page et modifiez le champ secret_key. J'ai également activé le champ du mot de passe qui est normalement haché.
