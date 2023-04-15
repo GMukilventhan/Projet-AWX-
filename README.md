@@ -23,7 +23,7 @@ sudo apt install ansible -y
 ```bash
 ansible --version
 ```
-- Ouput
+- Output
 ```bash
 root@awx:/etc# ansible --version
 ansible 2.10.8
@@ -61,7 +61,7 @@ sudo apt install docker-ce
 ```bash
 root@awx:/etc# sudo systemctl status docker
 ```
-- Ouput
+- Output
 ```bash
 root@awx:/etc# sudo systemctl status docker
 docker.service - Docker Application Container Engine
