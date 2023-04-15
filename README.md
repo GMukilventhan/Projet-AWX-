@@ -33,3 +33,46 @@ ansible 2.10.8
   executable location = /usr/bin/ansible
   python version = 3.10.6 (main, Mar 10 2023, 10:55:28) [GCC 11.3.0]
   ```
+  
+  ## 2- Install Docker
+  
+  - Installer les paquets nécessaires, importer la clé GPG et ajouter le dépôt aux sources APT
+
+```bash
+sudo apt install apt-transport-https ca-certificates curl software-properties-common gnupg-agent
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+```
+
+- Mettre à jour le nouveau dépôt et installer Docker depuis son dépôt
+
+```bash
+sudo apt update
+apt-cache policy docker-ce
+```
+
+- Installer docker-ce
+
+```bash
+sudo apt install docker-ce
+```
+
+- Vérifier l'installation
+```bash
+root@awx:/etc# sudo systemctl status docker
+```
+- Ouput
+```bash
+root@awx:/etc# sudo systemctl status docker
+docker.service - Docker Application Container Engine
+     Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+     Active: active (running) since Sat 2023-04-15 19:45:33 UTC; 6min ago
+TriggeredBy: ● docker.socket
+       Docs: https://docs.docker.com
+   Main PID: 962 (dockerd)
+      Tasks: 19
+     Memory: 109.4M
+        CPU: 2.407s
+     CGroup: /system.slice/docker.service
+             └─962 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+  ```
