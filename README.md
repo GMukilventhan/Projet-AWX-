@@ -147,7 +147,110 @@ acdf1e1aa184   ansible/awx:17.1.0   "/usr/bin/tini -- /b…"   53 minutes ago   
 958e6fc63653   postgres:12          "docker-entrypoint.s…"   53 minutes ago   Up 53 minutes   5432/tcp                                awx_postgres
 89b2aaed9bc2   redis                "docker-entrypoint.s…"   53 minutes ago   Up 53 minutes   6379/tcp                                awx_redis
 ```
+
 Vous pouvez accéder à l'interface Web d'Ansible AWX via hostip ou hostname sur le port 80. Connectez-vous avec les informations d'identification définies dans le fichier d'inventaire.
 
 
 # GitLab 
+
+## Pour commencer
+
+Avant d'installer GitLab, il est recommandé de mettre à jour et de mettre à niveau tous les paquets système vers la version actualisée. Vous mettez à jour tous les paquets à l'aide de la commande suivante.
+
+```bash
+apt update -y
+apt upgrade -y
+```
+Une fois que tous les paquets ont été mis à jour, vous pouvez ajouter le dépôt GitLab.
+
+## 1 - Ajouter un dépôt GitLab
+
+Par défaut, le paquetage GitLab n'est pas inclus dans le dépôt par défaut d'Ubuntu. Vous devez donc ajouter le dépôt officiel de GitLab à APT.
+
+Tout d'abord, installez toutes les dépendances nécessaires à l'aide de la commande suivante
+
+```bash
+apt install curl debian-archive-keyring lsb-release ca-certificates apt-transport-https software-properties-common -y
+```
+
+Une fois toutes les dépendances installées, ajoutez la clé GPG de GitLab avec la commande suivante
+
+```bash
+gpg_key_url="https://packages.gitlab.com/gitlab/gitlab-ce/gpgkey"
+curl -fsSL $gpg_key_url| gpg --dearmor -o /etc/apt/trusted.gpg.d/gitlab.gpg
+```
+
+Ensuite, ajoutez le dépôt GitLab à APT avec la commande suivante
+
+```bash
+nano /etc/apt/sources.list.d/gitlab_gitlab-ce.list****
+```
+
+Ajouter la ligne suivante
+
+```bash
+deb https://packages.gitlab.com/gitlab/gitlab-ce/ubuntu/ focal main
+deb-src https://packages.gitlab.com/gitlab/gitlab-ce/ubuntu/ focal main
+```
+
+Enregistrez et fermez le fichier, puis mettez à jour le référentiel avec la commande suivante
+
+```bash
+apt update -y
+```
+
+## 2 - Installer GitLab
+
+Vous pouvez maintenant installer GitLab en exécutant la commande suivante
+
+```bash
+apt install gitlab-ce -y
+```
+
+## 3 - Configurer GitLab
+
+Ensuite, vous devez éditer le fichier de configuration de GitLab et définir l'URL de votre domaine pour y accéder via internet.
+
+```bash
+nano /etc/gitlab/gitlab.rb
+```
+
+Modifier la ligne suivante :
+
+```bash
+external_url 'http://gitlab.yourdomain.com'
+```
+
+Sauvegardez et fermez le fichier puis reconfigurez le GitLab avec la commande suivante.
+
+```bash
+gitlab-ctl reconfigure
+```
+
+Vous pouvez maintenant vérifier la configuration de GitLab à l'aide de la commande suivante.
+
+```bash
+gitlab-rake gitlab:check
+```
+
+## 4 - Accéder à GitLab
+
+A ce stade, GitLab est installé et configuré. Pour accéder à l'interface web de GitLab, vous devrez récupérer le mot de passe root de GitLab pour vous connecter à GitLab.
+
+```bash
+cat /etc/gitlab/initial_root_password
+```
+
+Output
+```bash
+root@git:/etc/apt/sources.list.d# cat /etc/gitlab/initial_root_password
+# WARNING: This value is valid only in the following conditions
+#          1. If provided manually (either via `GITLAB_ROOT_PASSWORD` environment variable or via `gitlab_rails['initial_root_password']` setting in `gitlab.rb`, it was provided before database was seeded for the first time (usually, the first reconfigure run).
+#          2. Password hasn't been changed manually, either via UI or via command line.
+#
+#          If the password shown here doesn't work, you must reset the admin password following https://docs.gitlab.com/ee/security/reset_user_password.html#reset-your-root-password.
+
+Password: Ym0cHhYK/ENJM8X/aMdo94SuNAhWMBVgb1C/U1fAUNY=
+
+# NOTE: This file will be automatically deleted in the first reconfigure run after 24 hours.
+```
