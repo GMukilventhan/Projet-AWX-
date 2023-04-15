@@ -83,3 +83,42 @@ TriggeredBy: ● docker.socket
 sudo apt install -y nodejs npm
 sudo npm install npm --global
 ```
+
+## 4- Installer Ansible AWX
+
+```bash
+sudo apt install python3-pip git pwgen vim
+sudo pip3 install requests==2.22.0
+```
+
+- Récupérer un module docker-compose pour Python qui correspond à votre version
+
+```bash
+root@awx:/etc# docker-compose version
+docker-compose version 1.29.2, build unknown
+docker-py version: <module 'docker.version' from '/usr/local/lib/python3.10/dist-packages/docker/version.py'>
+CPython version: 3.10.6
+OpenSSL version: OpenSSL 3.0.2 15 Mar 2022
+```
+
+- La version que j'ai installée est la 1.29.2
+
+```bash
+sudo pip3 install docker-compose==1.29.2
+```
+
+- Téléchargez le zip AWX depuis Github, décompressez, installez et générez le secret
+
+```bash
+wget https://github.com/ansible/awx/archive/17.1.0.zip
+unzip 17.1.0.zip
+cd awx-17.1.0/installer/
+pwgen -N 1 -s 30
+```
+
+
+- Modifiez ensuite le fichier d'inventaire et ajoutez la clé secrète que vous venez de générer
+
+```bash
+sudo nano inventory
+```
