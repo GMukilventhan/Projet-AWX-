@@ -12,7 +12,7 @@
 - Docker et Docker Compose
 - Node et NPM
 
-## 1- Installer Ansible
+## 1 - Installer Ansible
 
 ```bash
 sudo apt update
@@ -34,7 +34,7 @@ ansible 2.10.8
   python version = 3.10.6 (main, Mar 10 2023, 10:55:28) [GCC 11.3.0]
   ```
   
-  ## 2- Installer Docker
+  ## 2 - Installer Docker
   
   - Installer les paquets nécessaires, importer la clé GPG et ajouter le dépôt aux sources APT
 
@@ -77,14 +77,14 @@ TriggeredBy: ● docker.socket
              └─962 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
   ```
 
-## 3- Installer Node/NPM
+## 3 - Installer Node/NPM
 
 ```bash
 sudo apt install -y nodejs npm
 sudo npm install npm --global
 ```
 
-## 4- Installer Ansible AWX
+## 4 - Installer Ansible AWX
 
 ```bash
 sudo apt install python3-pip git pwgen vim
@@ -123,4 +123,28 @@ pwgen -N 1 -s 30
 sudo nano inventory
 ```
 
-Faites défiler la page et modifiez le champ secret_key. J'ai également activé le champ du mot de passe qui est normalement haché.
+Faites défiler la page et modifiez le champ secret_key. J'ai également activé le champ du mot de passe qui est normalement haché
+
+## 5 - Déployer AWX
+
+```bash
+ansible-playbook -i inventory install.yml
+```
+
+Aucune tâche ne doit avoir échoué. Vérifiez que les conteneurs Docker sont en place avec les éléments suivants
+
+```bash
+docker ps
+```
+
+Output 
+
+```bash
+root@awx:/etc/awx-17.1.0/installer# docker ps
+CONTAINER ID   IMAGE                COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+7a44440c353e   ansible/awx:17.1.0   "/usr/bin/tini -- /u…"   53 minutes ago   Up 53 minutes   8052/tcp                                awx_task
+acdf1e1aa184   ansible/awx:17.1.0   "/usr/bin/tini -- /b…"   53 minutes ago   Up 53 minutes   0.0.0.0:80->8052/tcp, :::80->8052/tcp   awx_web
+958e6fc63653   postgres:12          "docker-entrypoint.s…"   53 minutes ago   Up 53 minutes   5432/tcp                                awx_postgres
+89b2aaed9bc2   redis                "docker-entrypoint.s…"   53 minutes ago   Up 53 minutes   6379/tcp                                awx_redis
+```
+Vous pouvez accéder à l'interface Web d'Ansible AWX via hostip ou hostname sur le port 80. Connectez-vous avec les informations d'identification définies dans le fichier d'inventaire.
