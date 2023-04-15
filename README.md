@@ -148,3 +148,6 @@ acdf1e1aa184   ansible/awx:17.1.0   "/usr/bin/tini -- /b…"   53 minutes ago   
 89b2aaed9bc2   redis                "docker-entrypoint.s…"   53 minutes ago   Up 53 minutes   6379/tcp                                awx_redis
 ```
 Vous pouvez accéder à l'interface Web d'Ansible AWX via hostip ou hostname sur le port 80. Connectez-vous avec les informations d'identification définies dans le fichier d'inventaire.
+
+
+# GitLab 
