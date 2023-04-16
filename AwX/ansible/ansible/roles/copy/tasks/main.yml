@@ -1,0 +1,12 @@
+---
+# tasks file for roles/copy
+#
+- name: Copy the esgi.jpg image to the /var/www/html folder
+  copy:
+    src: /var/lib/awx/projects/ansible/ansible/roles/copy/templates/esgi.jpg
+    dest: /var/www/html
+
+- name: Copy index.j2
+  template:
+    src: /var/lib/awx/projects/ansible/ansible/roles/copy/templates/index.j2
+    dest: /var/www/html/index.html
