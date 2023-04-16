@@ -254,3 +254,15 @@ Password: Ym0cHhYK/ENJM8X/aMdo94SuNAhWMBVgb1C/U1fAUNY=
 
 # NOTE: This file will be automatically deleted in the first reconfigure run after 24 hours.
 ```
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+sur la machine awx / copier la clés
+```bash
+cat ~/.ssh/id_rsa.pub
+```
+
+sur les machines clients coller la clés dans le repertoire 
+```bash
+nano ~/.ssh/authorized_keys
+```
+
+
