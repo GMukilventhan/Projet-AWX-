@@ -275,7 +275,7 @@ Le projet se trouve sur gitlab:
 Ajouts des élements sur awx:
 Inventories:
 <img width="1904" alt="Capture d’écran 2023-04-18 à 00 53 11" src="https://user-images.githubusercontent.com/90500004/232628171-d622d5db-ccf1-44b9-9ad7-f0d61b6dc9c6.png">
-![Uploading Capture d’écran 2023-04-18 à 00.53.45.png…]()
+<img width="1904" alt="Capture d’écran 2023-04-18 à 00 53 45" src="https://user-images.githubusercontent.com/90500004/232628606-a4987b71-07cc-46d7-8b58-47d59f3cb66c.png">
 Groups:
 <img width="1904" alt="Capture d’écran 2023-04-18 à 00 54 09" src="https://user-images.githubusercontent.com/90500004/232628226-fc12ff47-2ba6-4726-ad12-54f3c6e2b5c9.png">
 
@@ -297,9 +297,11 @@ Notification:
 
 <img width="1904" alt="Capture d’écran 2023-04-18 à 00 56 58" src="https://user-images.githubusercontent.com/90500004/232628422-1769afcc-c2df-4c58-9ce5-74bb034ca88f.png">
 
-![Uploading Capture d’écran 2023-04-18 à 00.57.21.png…]()
+<img width="1904" alt="Capture d’écran 2023-04-18 à 00 57 21" src="https://user-images.githubusercontent.com/90500004/232628663-e522a536-2f5c-49ab-bea0-bfe53823e619.png">
 
-![Uploading Capture d’écran 2023-04-18 à 00.58.46.png…]()
+<img width="1904" alt="Capture d’écran 2023-04-18 à 00 58 46" src="https://user-images.githubusercontent.com/90500004/232628679-f979c795-1be9-4b0e-9695-e03037a9771b.png">
+
+
 
 
 
