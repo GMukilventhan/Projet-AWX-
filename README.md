@@ -305,7 +305,7 @@ Notification:
 <img width="1904" alt="Capture d’écran 2023-04-18 à 00 58 46" src="https://user-images.githubusercontent.com/90500004/232628679-f979c795-1be9-4b0e-9695-e03037a9771b.png">
 
 
-
+```bash
 Identity added: /tmp/bwrap_131_hoooi_b1/awx_131_t657dtwv/artifacts/131/ssh_key_data (root@ubuntu03)
 SSH password: 
 Vault password: 
@@ -490,7 +490,7 @@ PLAY RECAP *********************************************************************
 172.20.20.12               : ok=18   changed=0    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
 172.20.20.14               : ok=18   changed=0    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
 
-
+```
 
 
 
