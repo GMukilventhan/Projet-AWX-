@@ -264,7 +264,8 @@ sur les machines clients coller la clés dans le repertoire
 ```bash
 nano ~/.ssh/authorized_keys
 ```
-🚨n'oubliez pas d'avoir le fichier vault 
+🚨n'oubliez pas d'avoir le fichier vault ou sinon la créer 
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 Le projet se trouve sur gitlab: 
 <img width="1904" alt="Capture d’écran 2023-04-18 à 00 23 39" src="https://user-images.githubusercontent.com/90500004/232628086-f164d6d2-7d6f-4a5a-9262-ffc030f4139e.png">
