@@ -267,9 +267,46 @@ nano ~/.ssh/authorized_keys
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 Le projet se trouve sur gitlab: 
+<img width="1904" alt="Capture d’écran 2023-04-18 à 00 23 39" src="https://user-images.githubusercontent.com/90500004/232628086-f164d6d2-7d6f-4a5a-9262-ffc030f4139e.png">
+
 <img width="1904" alt="Capture d’écran 2023-04-18 à 00 50 32" src="https://user-images.githubusercontent.com/90500004/232627161-ad493f33-e90d-4e3f-9b39-32a7fdcce0fc.png">
 
 
 Ajouts des élements sur awx:
+Inventories:
+<img width="1904" alt="Capture d’écran 2023-04-18 à 00 53 11" src="https://user-images.githubusercontent.com/90500004/232628171-d622d5db-ccf1-44b9-9ad7-f0d61b6dc9c6.png">
+![Uploading Capture d’écran 2023-04-18 à 00.53.45.png…]()
+Groups:
+<img width="1904" alt="Capture d’écran 2023-04-18 à 00 54 09" src="https://user-images.githubusercontent.com/90500004/232628226-fc12ff47-2ba6-4726-ad12-54f3c6e2b5c9.png">
+
+Hosts:
+<img width="1904" alt="Capture d’écran 2023-04-18 à 00 54 52" src="https://user-images.githubusercontent.com/90500004/232628245-40efc291-fa4c-4a4c-986a-71ebdb8b2a70.png">
+<img width="1904" alt="Capture d’écran 2023-04-18 à 00 55 06" src="https://user-images.githubusercontent.com/90500004/232628276-bdabb606-6df7-4d5d-8d77-24b4467b00c0.png">
+
+Projects
+<img width="1904" alt="Capture d’écran 2023-04-18 à 00 55 25" src="https://user-images.githubusercontent.com/90500004/232628313-7d34f5cd-8882-43a3-96c0-11d2c1f7f773.png">
+
+Credentials
+<img width="1904" alt="Capture d’écran 2023-04-18 à 00 55 34" src="https://user-images.githubusercontent.com/90500004/232628329-0c62ee07-76ff-430c-bf7d-6a318c1ba67f.png">
+
+Templates:
+<img width="1904" alt="Capture d’écran 2023-04-18 à 00 55 55" src="https://user-images.githubusercontent.com/90500004/232628364-1a1c9f68-5170-4632-b024-fce5068c3dd7.png">
+
+Notification:
+<img width="1904" alt="Capture d’écran 2023-04-18 à 00 56 28" src="https://user-images.githubusercontent.com/90500004/232628409-2c9a5a1f-dfb9-43cf-8643-d6c328b54c89.png">
+
+<img width="1904" alt="Capture d’écran 2023-04-18 à 00 56 58" src="https://user-images.githubusercontent.com/90500004/232628422-1769afcc-c2df-4c58-9ce5-74bb034ca88f.png">
+
+![Uploading Capture d’écran 2023-04-18 à 00.57.21.png…]()
+
+![Uploading Capture d’écran 2023-04-18 à 00.58.46.png…]()
+
+
+
+
+
+
+
+
 
 
