@@ -265,4 +265,11 @@ sur les machines clients coller la clés dans le repertoire
 nano ~/.ssh/authorized_keys
 ```
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Le projet se trouve sur gitlab: 
+<img width="1904" alt="Capture d’écran 2023-04-18 à 00 50 32" src="https://user-images.githubusercontent.com/90500004/232627161-ad493f33-e90d-4e3f-9b39-32a7fdcce0fc.png">
+
+
+Ajouts des élements sur awx:
+
 
