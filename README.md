@@ -15,8 +15,7 @@
 ## 1 - Installer Ansible
 
 ```bash
-sudo apt update
-sudo apt install ansible -y
+sudo apt update && sudo apt install ansible -y
 ```
 
 - Vérifier l'installation
