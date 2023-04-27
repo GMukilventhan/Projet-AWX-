@@ -263,7 +263,7 @@ Copier l'image esgi.jpg dans le dossier /var/www/html : cette tâche utilise le 
 
 Copier le fichier index.j2 dans le dossier /var/www/html : cette tâche utilise le module template d'Ansible pour copier le fichier index.j2 depuis le dossier templates vers le dossier /var/www/html, en le transformant en fichier HTML.
 
-Nous avaons ajouter les variables dans le fichier globalvars/all.yml en utilisant la commande ansible-vault edit. 
+Nous avons ajouter les variables dans le fichier globalvars/all.yml en utilisant la commande ansible-vault edit. 
 Nous avons ajouté les variables classe et groupe avec les valeurs 4SRC2 et 5.
 
 
@@ -347,6 +347,30 @@ vim vars/main.yml
 ntp_file_config: /etc/ntp.conf
 ```
 
+Voici les tâches que nous avons mis en place :
+
+Installation de ntp : Le module "ansible.builtin.apt" pour installer le paquet ntp et stocke le résultat dans la variable "result_ntp".
+
+show result_ntp : Le module "debug" pour afficher la valeur de la variable "result_ntp".
+
+Already installed : Le module "debug" pour afficher un message si ntp est déjà installé. Elle est conditionnée par le fait que le paquet n'a pas été installé pendant la tâche précédente.
+
+check file exist : Le module "stat" pour vérifier si le fichier de configuration de ntp existe. Le résultat est stocké dans la variable "check_file".
+
+Creation of the ntp file : Le module "file" pour créer le fichier de configuration de ntp avec les permissions 0644. Elle est conditionnée par le fait que le fichier n'existe pas déjà.
+
+Add NTP servers with a list and loop in the file : Le module "lineinfile" pour ajouter les serveurs ntp dans le fichier de configuration. Elle utilise une boucle "loop" pour parcourir la liste des serveurs ntp. Le résultat est stocké dans la variable "update_ntp".
+
+Check file update :  Le module "set_fact" pour définir une variable "change_status" à "true" si le fichier de configuration a été mis à jour. Elle utilise une boucle "loop" pour parcourir les résultats de la tâche précédente. Elle est conditionnée par le fait que la tâche précédente ait effectivement modifié le fichier.
+
+Restart ntp :Le module "service" pour redémarrer le service ntp. Elle est conditionnée par le fait que le paquet ntp a été installé ou que le fichier de configuration a été modifié.
+
+Nous avons ajouter les variables dans le fichier globalvars/all.yml en utilisant la commande ansible-vault edit. 
+Nous avons ajouté les variables ntp_server.
+
+nous allons ajouter le chemin du fichier ntp.conf en utilisant le fichier main.yml
+
+
 ## Firewall
 - Ouvrir le fichier main.yml dans le dossier firewall
 ```bash
@@ -379,6 +403,16 @@ vim roles/firewall/tasks/main.yml
     destination_port: 80
     jump: ACCEPT
 ```
+
+Les tâches présente dans ce fichier sont les suivantes :
+
+Installation de iptables : Cette tâche utilise le module ansible.builtin.apt pour installer iptables si ce n'est pas déjà installé. Le résultat de cette tâche est enregistré dans la variable result_iptables.
+
+Affichage du résultat d'installation de iptables : Cette tâche utilise le module debug pour afficher le résultat de l'installation de iptables.
+
+Vérification de l'installation de iptables : Cette tâche utilise le module debug pour afficher un message si iptables est déjà installé.
+
+Autoriser le port 80 sur le pare-feu : Cette tâche utilise le module iptables pour ajouter une règle autorisant le trafic entrant sur le port 80. Le paramètre chain est défini sur "INPUT" pour spécifier que la règle s'applique au trafic entrant. Le paramètre protocol est défini sur "tcp" pour spécifier que la règle s'applique uniquement aux paquets TCP. Le paramètre destination_port est défini sur "80" pour spécifier le port à autoriser. Le paramètre jump est défini sur "ACCEPT" pour spécifier que les paquets doivent être acceptés.
 
 ## User
 
