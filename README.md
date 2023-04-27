@@ -20,6 +20,14 @@ la création de ces derniers
 
 [Documentation Ansible](https://docs.ansible.com/)
 
+##information 
+Machines |IP's       |Fonction | 
+------  | -------    | -----   
+ubuntu03|172.20.20.13| AWX / Ansible| 
+ubuntu05|172.20.20.15| Gitlab       | 
+ubuntu02|172.20.20.12| Client1      | 
+ubuntu04|172.20.20.14| Client3      | 
+
 ## Prérequis
 - python
 Ansible nécessite une version de python supérieure à 2.6
@@ -927,20 +935,6 @@ PLAY RECAP *********************************************************************
 172.20.20.14               : ok=18   changed=0    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
 
 ```
-
-
-
-
-
-
-Machine |IP           |Fonction | 
-------  | -------    | -----   
-ubuntu03|172.20.20.13| AWX / Ansible| 
-ubuntu05|172.20.20.15| Gitlab       | 
-ubuntu02|172.20.20.12| Client1      | 
-ubuntu04|172.20.20.14| Client3      | 
-
-
 
 ## Auteurs
 - [GEORGE Mukilventhan](https://github.com/GMukilventhan)
