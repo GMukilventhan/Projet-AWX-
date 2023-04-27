@@ -209,21 +209,21 @@ vim roles/apache2/tasks/main.yml
 
 - Voici les tâches que nous avons ajouté :
 
-  1.Installation Apache2 : cette tâche utilise le module apt d'Ansible pour installer Apache2 sur la machine.
+  Installation Apache2 : cette tâche utilise le module apt d'Ansible pour installer Apache2 sur la machine.
 
-  2.Afficher le résultat d'installation d'Apache2 : cette tâche utilise le module debug d'Ansible pour afficher le résultat de l'installation d'Apache2.
+  Afficher le résultat d'installation d'Apache2 : cette tâche utilise le module debug d'Ansible pour afficher le résultat de l'installation d'Apache2.
 
-  3.Vérifier si Apache2 est déjà installé : cette tâche utilise le module debug d'Ansible pour afficher un message indiquant qu'Apache2 est déjà installé si c'est le cas.
+  Vérifier si Apache2 est déjà installé : cette tâche utilise le module debug d'Ansible pour afficher un message indiquant qu'Apache2 est déjà installé si c'est le cas.
 
-  4.Redémarrer Apache2 : cette tâche utilise le module service d'Ansible pour redémarrer Apache2 si l'installation a été effectuée.
+  Redémarrer Apache2 : cette tâche utilise le module service d'Ansible pour redémarrer Apache2 si l'installation a été effectuée.
 
-  5.Vérifier si l'URL répond : cette tâche utilise le module uri d'Ansible pour vérifier si l'URL de localhost répond. Elle enregistre le résultat de la vérification dans la variable result.
+  Vérifier si l'URL répond : cette tâche utilise le module uri d'Ansible pour vérifier si l'URL de localhost répond. Elle enregistre le résultat de la vérification dans la variable result.
 
-  6.Afficher un message si l'URL répond : cette tâche utilise le module debug d'Ansible pour afficher un message si l'URL répond.
+  Afficher un message si l'URL répond : cette tâche utilise le module debug d'Ansible pour afficher un message si l'URL répond.
 
-  7.Afficher un message d'erreur si l'URL ne répond pas : cette tâche utilise le module debug d'Ansible pour afficher un message d'erreur si l'URL ne répond pas.
+  Afficher un message d'erreur si l'URL ne répond pas : cette tâche utilise le module debug d'Ansible pour afficher un message d'erreur si l'URL ne répond pas.
 
-  8.Redémarrer le service Apache2 si l'URL ne répond pas : cette tâche utilise le module service d'Ansible pour redémarrer le service Apache2 si l'URL ne répond pas.
+  Redémarrer le service Apache2 si l'URL ne répond pas : cette tâche utilise le module service d'Ansible pour redémarrer le service Apache2 si l'URL ne répond pas.
 
 
 ## Copy
