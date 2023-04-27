@@ -206,7 +206,9 @@ vim roles/apache2/tasks/main.yml
     state: restarted
   when: result.status != 200
 ```
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
+## Description des taches:
 - Voici les tâches que nous avons ajouté :
 
   Installation Apache2 : cette tâche utilise le module apt d'Ansible pour installer Apache2 sur la machine.
@@ -224,7 +226,8 @@ vim roles/apache2/tasks/main.yml
   Afficher un message d'erreur si l'URL ne répond pas : cette tâche utilise le module debug d'Ansible pour afficher un message d'erreur si l'URL ne répond pas.
 
   Redémarrer le service Apache2 si l'URL ne répond pas : cette tâche utilise le module service d'Ansible pour redémarrer le service Apache2 si l'URL ne répond pas.
-
+  
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Copy
 Attention il faut créer les fichiers esgi.jpg et index.j2 dans le dossier templates
@@ -257,6 +260,9 @@ classe: 4SRC2
 groupe: 5
 ```
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Description des taches:
 Voici les tâches que nous avons mis en place :
 
 Copier l'image esgi.jpg dans le dossier /var/www/html : cette tâche utilise le module copy d'Ansible pour copier l'image esgi.jpg depuis le dossier templates vers le dossier /var/www/html.
@@ -266,7 +272,7 @@ Copier le fichier index.j2 dans le dossier /var/www/html : cette tâche utilise 
 Nous avons ajouter les variables dans le fichier globalvars/all.yml en utilisant la commande ansible-vault edit. 
 Nous avons ajouté les variables classe et groupe avec les valeurs 4SRC2 et 5.
 
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 ## NTP
@@ -347,6 +353,10 @@ vim vars/main.yml
 ntp_file_config: /etc/ntp.conf
 ```
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Description des taches:
+
 Voici les tâches que nous avons mis en place :
 
 Installation de ntp : Le module "ansible.builtin.apt" pour installer le paquet ntp et stocke le résultat dans la variable "result_ntp".
@@ -370,6 +380,7 @@ Nous avons ajouté les variables ntp_server.
 
 nous allons ajouter le chemin du fichier ntp.conf en utilisant le fichier main.yml
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Firewall
 - Ouvrir le fichier main.yml dans le dossier firewall
@@ -404,6 +415,10 @@ vim roles/firewall/tasks/main.yml
     jump: ACCEPT
 ```
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Description des taches:
+
 Les tâches présente dans ce fichier sont les suivantes :
 
 Installation de iptables : Cette tâche utilise le module ansible.builtin.apt pour installer iptables si ce n'est pas déjà installé. Le résultat de cette tâche est enregistré dans la variable result_iptables.
@@ -413,6 +428,8 @@ Affichage du résultat d'installation de iptables : Cette tâche utilise le modu
 Vérification de l'installation de iptables : Cette tâche utilise le module debug pour afficher un message si iptables est déjà installé.
 
 Autoriser le port 80 sur le pare-feu : Cette tâche utilise le module iptables pour ajouter une règle autorisant le trafic entrant sur le port 80. Le paramètre chain est défini sur "INPUT" pour spécifier que la règle s'applique au trafic entrant. Le paramètre protocol est défini sur "tcp" pour spécifier que la règle s'applique uniquement aux paquets TCP. Le paramètre destination_port est défini sur "80" pour spécifier le port à autoriser. Le paramètre jump est défini sur "ACCEPT" pour spécifier que les paquets doivent être acceptés.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## User
 
@@ -446,7 +463,23 @@ users:
   - { Name: Mohamed, Password: mdp }
   - { Name: Maxime, Password: mdp }
 ```
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
+## Description des taches:
+
+Les tâches présente dans ce fichier sont les suivantes :
+
+Elle utilise le module "user" pour créer un utilisateur
+Le nom de l'utilisateur est spécifié dans la liste des utilisateurs sous l'attribut "Name"
+Le mot de passe de l'utilisateur est spécifié dans la liste des utilisateurs sous l'attribut "Password"
+L'attribut "state" est défini sur "present" pour s'assurer que l'utilisateur est créé si ce n'est pas déjà le cas
+La tâche est exécutée pour chaque élément de la liste des utilisateurs grâce à la boucle "loop"
+L'attribut "no_log" est défini sur "true" pour que les noms d'utilisateur et les mots de passe ne soient pas enregistrés dans les journaux.
+
+Nous avons ajouter les variables dans le fichier globalvars/all.yml en utilisant la commande ansible-vault edit. 
+Nous avons ajouté les variables user + mots de passes
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Playbook
 - Ouvrir le fichier projet.yml et ajouter les roles
 ```bash
