@@ -28,6 +28,14 @@ ubuntu05|172.20.20.15| Gitlab       |
 ubuntu02|172.20.20.12| Client1      | 
 ubuntu04|172.20.20.14| Client3      | 
 
+## Techno:
+
+- Ansible / AWX
+- Gitlab 
+- Docker 
+- Ubuntu
+- Python 
+
 ## Prérequis
 - python
 Ansible nécessite une version de python supérieure à 2.6
@@ -846,7 +854,133 @@ Notification:
 
 <img width="1904" alt="Capture d’écran 2023-04-18 à 00 58 46" src="https://user-images.githubusercontent.com/90500004/232628679-f979c795-1be9-4b0e-9695-e03037a9771b.png">
 
+## Nouvelle machine
+```bash
+Identity added: /tmp/bwrap_197_ggz9y6kd/awx_197_s_g32lpt/artifacts/197/ssh_key_data (root@ubuntu03)
+SSH password: 
+Vault password: 
 
+PLAY [CLIENT] ******************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [172.20.20.16]
+
+TASK [apache2 : Installation Apache2] ******************************************
+ok: [172.20.20.16]
+
+TASK [show result_apache2] *****************************************************
+ok: [172.20.20.16] => {
+    "result_apache2": {
+        "cache_update_time": 1681542524,
+        "cache_updated": false,
+        "changed": false,
+        "failed": false
+    }
+}
+
+TASK [apache2 : Already installed] *********************************************
+ok: [172.20.20.16] => {
+    "msg": "Apache2 is already installed"
+}
+
+TASK [apache2 : Restart Apache2] ***********************************************
+skipping: [172.20.20.16]
+
+TASK [apache2 : Check that the URL responds] ***********************************
+ok: [172.20.20.16]
+
+TASK [apache2 : debug message] *************************************************
+skipping: [172.20.20.16]
+
+TASK [apache2 : Error message] *************************************************
+ok: [172.20.20.16] => {
+    "msg": "The URL does not respond"
+}
+
+TASK [apache2 : Restart service after URL ko] **********************************
+changed: [172.20.20.16]
+
+TASK [copy : Copy the esgi.jpg image to the /var/www/html folder] **************
+ok: [172.20.20.16]
+
+TASK [copy : Copy index.j2] ****************************************************
+ok: [172.20.20.16]
+
+TASK [Installation of ntp] *****************************************************
+ok: [172.20.20.16]
+
+TASK [show result_ntp] *********************************************************
+ok: [172.20.20.16] => {
+    "result_ntp": {
+        "cache_update_time": 1681542524,
+        "cache_updated": false,
+        "changed": false,
+        "failed": false
+    }
+}
+
+TASK [ntp : Already installed] *************************************************
+ok: [172.20.20.16] => {
+    "msg": "ntp is already installed"
+}
+
+TASK [ntp : check file exist] **************************************************
+ok: [172.20.20.16]
+
+TASK [Creation of the ntp file] ************************************************
+skipping: [172.20.20.16]
+
+TASK [ntp : Add NTP servers with a list and loop in the file] ******************
+ok: [172.20.20.16] => (item=30.30.30.30)
+ok: [172.20.20.16] => (item=14.14.14.14)
+ok: [172.20.20.16] => (item=5.5.5.5)
+ok: [172.20.20.16] => (item=8.8.8.8)
+
+TASK [ntp : check  file update] ************************************************
+skipping: [172.20.20.16] => (item={'changed': False, 'msg': '', 'backup': '', 'diff': [{'before': '', 'after': '', 'before_header': '/etc/ntp.conf (content)', 'after_header': '/etc/ntp.conf (content)'}, {'before_header': '/etc/ntp.conf (file attributes)', 'after_header': '/etc/ntp.conf (file attributes)'}], 'invocation': {'module_args': {'path': '/etc/ntp.conf', 'line': 'server 30.30.30.30', 'state': 'present', 'backrefs': False, 'create': False, 'backup': False, 'firstmatch': False, 'follow': False, 'regexp': None, 'insertafter': None, 'insertbefore': None, 'validate': None, 'mode': None, 'owner': None, 'group': None, 'seuser': None, 'serole': None, 'selevel': None, 'setype': None, 'attributes': None, 'src': None, 'force': None, 'content': None, 'remote_src': None, 'delimiter': None, 'directory_mode': None, 'unsafe_writes': None}}, 'failed': False, 'item': '30.30.30.30', 'ansible_loop_var': 'item'}) 
+skipping: [172.20.20.16] => (item={'changed': False, 'msg': '', 'backup': '', 'diff': [{'before': '', 'after': '', 'before_header': '/etc/ntp.conf (content)', 'after_header': '/etc/ntp.conf (content)'}, {'before_header': '/etc/ntp.conf (file attributes)', 'after_header': '/etc/ntp.conf (file attributes)'}], 'invocation': {'module_args': {'path': '/etc/ntp.conf', 'line': 'server 14.14.14.14', 'state': 'present', 'backrefs': False, 'create': False, 'backup': False, 'firstmatch': False, 'follow': False, 'regexp': None, 'insertafter': None, 'insertbefore': None, 'validate': None, 'mode': None, 'owner': None, 'group': None, 'seuser': None, 'serole': None, 'selevel': None, 'setype': None, 'attributes': None, 'src': None, 'force': None, 'content': None, 'remote_src': None, 'delimiter': None, 'directory_mode': None, 'unsafe_writes': None}}, 'failed': False, 'item': '14.14.14.14', 'ansible_loop_var': 'item'}) 
+skipping: [172.20.20.16] => (item={'changed': False, 'msg': '', 'backup': '', 'diff': [{'before': '', 'after': '', 'before_header': '/etc/ntp.conf (content)', 'after_header': '/etc/ntp.conf (content)'}, {'before_header': '/etc/ntp.conf (file attributes)', 'after_header': '/etc/ntp.conf (file attributes)'}], 'invocation': {'module_args': {'path': '/etc/ntp.conf', 'line': 'server 5.5.5.5', 'state': 'present', 'backrefs': False, 'create': False, 'backup': False, 'firstmatch': False, 'follow': False, 'regexp': None, 'insertafter': None, 'insertbefore': None, 'validate': None, 'mode': None, 'owner': None, 'group': None, 'seuser': None, 'serole': None, 'selevel': None, 'setype': None, 'attributes': None, 'src': None, 'force': None, 'content': None, 'remote_src': None, 'delimiter': None, 'directory_mode': None, 'unsafe_writes': None}}, 'failed': False, 'item': '5.5.5.5', 'ansible_loop_var': 'item'}) 
+skipping: [172.20.20.16] => (item={'changed': False, 'msg': '', 'backup': '', 'diff': [{'before': '', 'after': '', 'before_header': '/etc/ntp.conf (content)', 'after_header': '/etc/ntp.conf (content)'}, {'before_header': '/etc/ntp.conf (file attributes)', 'after_header': '/etc/ntp.conf (file attributes)'}], 'invocation': {'module_args': {'path': '/etc/ntp.conf', 'line': 'server 8.8.8.8', 'state': 'present', 'backrefs': False, 'create': False, 'backup': False, 'firstmatch': False, 'follow': False, 'regexp': None, 'insertafter': None, 'insertbefore': None, 'validate': None, 'mode': None, 'owner': None, 'group': None, 'seuser': None, 'serole': None, 'selevel': None, 'setype': None, 'attributes': None, 'src': None, 'force': None, 'content': None, 'remote_src': None, 'delimiter': None, 'directory_mode': None, 'unsafe_writes': None}}, 'failed': False, 'item': '8.8.8.8', 'ansible_loop_var': 'item'}) 
+
+TASK [Restart ntp] *************************************************************
+skipping: [172.20.20.16]
+
+TASK [firewall : Installation of iptables] *************************************
+ok: [172.20.20.16]
+
+TASK [firewall : show result_iptables] *****************************************
+ok: [172.20.20.16] => {
+    "result_iptables": {
+        "cache_update_time": 1681542524,
+        "cache_updated": false,
+        "changed": false,
+        "failed": false
+    }
+}
+
+TASK [firewall : Already installed] ********************************************
+ok: [172.20.20.16] => {
+    "msg": "iptables is already installed"
+}
+
+TASK [Allow port 80 on the firewall] *******************************************
+ok: [172.20.20.16]
+
+TASK [Create users] ************************************************************
+ok: [172.20.20.16] => (item=None)
+ok: [172.20.20.16] => (item=None)
+ok: [172.20.20.16] => (item=None)
+ok: [172.20.20.16] => (item=None)
+ok: [172.20.20.16]
+
+PLAY RECAP *********************************************************************
+172.20.20.16               : ok=19   changed=1    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0   
+
+
+
+```
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Machine déjà integrer 
 ```bash
 Identity added: /tmp/bwrap_131_hoooi_b1/awx_131_t657dtwv/artifacts/131/ssh_key_data (root@ubuntu03)
 SSH password: 
@@ -1035,7 +1169,10 @@ PLAY RECAP *********************************************************************
 ```
 
 ## Auteurs
-- [GEORGE Mukilventhan](https://github.com/GMukilventhan)
-- [PAYEN Théo](https://github.com/theo-payen)
-- [WAZANE Mohamed](https://github.com/mowazane)
-- [HABERMANN Maxime](https://github.com/MaximeHab)
+- 🧑🏽‍💻 [GEORGE Mukilventhan](https://github.com/GMukilventhan) 🧑🏽‍💻
+- 👨🏻‍💻 [PAYEN Théo](https://github.com/theo-payen) 👨🏻‍💻
+- 👨🏻‍💻[WAZANE Mohamed](https://github.com/mowazane) 👨🏻‍💻
+- 👨 [HABERMANN Maxime](https://github.com/MaximeHab) 👨🏻‍💻
+
+
+ 
