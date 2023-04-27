@@ -20,7 +20,7 @@ la création de ces derniers
 
 [Documentation Ansible](https://docs.ansible.com/)
 
-##information 
+## Information 
 Machines |IP's       |Fonction | 
 ------  | -------    | -----   
 ubuntu03|172.20.20.13| AWX / Ansible| 
