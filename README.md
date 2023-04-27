@@ -697,7 +697,29 @@ acdf1e1aa184   ansible/awx:17.1.0   "/usr/bin/tini -- /b…"   53 minutes ago   
 89b2aaed9bc2   redis                "docker-entrypoint.s…"   53 minutes ago   Up 53 minutes   6379/tcp                                awx_redis
 ```
 
+
+Ces quatre conteneurs correspondent aux composants principaux d'AWX.
+
+Voici à quoi correspondent chaque conteneur :
+
+- awx_postgres : 
+ Il s'agit du conteneur qui héberge la base de données PostgreSQL utilisée par AWX pour stocker toutes les informations relatives aux tâches, aux projets, aux inventaires et aux utilisateurs.
+
+- awx_redis : 
+ Ce conteneur héberge le serveur de base de données Redis, qui stocke les informations de cache et de session d'AWX. Il est utilisé pour stocker les résultats de tâches et les connexions des utilisateurs.
+
+- awx_web : 
+Ce conteneur est responsable de la fourniture de l'interface web d'AWX. Il expose l'interface utilisateur d'AWX via un serveur web NGINX.
+
+- awx_task : 
+Ce conteneur est le moteur d'exécution des tâches d'AWX. Il est responsable de la prise en charge de la planification, de l'exécution et du suivi des tâches et des travaux dans AWX.
+
+En résumé, chacun de ces conteneurs joue un rôle clé dans le fonctionnement d'AWX et est nécessaire pour assurer le bon fonctionnement de la plateforme.
+
+
+
 Vous pouvez accéder à l'interface Web d'Ansible AWX via hostip ou hostname sur le port 80. Connectez-vous avec les informations d'identification définies dans le fichier d'inventaire.
+
 
 
 # GitLab 
