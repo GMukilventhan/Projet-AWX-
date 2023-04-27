@@ -257,6 +257,18 @@ classe: 4SRC2
 groupe: 5
 ```
 
+Voici les tâches que nous avons mis en place :
+
+Copier l'image esgi.jpg dans le dossier /var/www/html : cette tâche utilise le module copy d'Ansible pour copier l'image esgi.jpg depuis le dossier templates vers le dossier /var/www/html.
+
+Copier le fichier index.j2 dans le dossier /var/www/html : cette tâche utilise le module template d'Ansible pour copier le fichier index.j2 depuis le dossier templates vers le dossier /var/www/html, en le transformant en fichier HTML.
+
+Nous avaons ajouter les variables dans le fichier globalvars/all.yml en utilisant la commande ansible-vault edit. 
+Nous avons ajouté les variables classe et groupe avec les valeurs 4SRC2 et 5.
+
+
+
+
 ## NTP
 - Ouvrir le fichier main.yml dans le dossier ntp
 ```bash
