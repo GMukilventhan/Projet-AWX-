@@ -1,4 +1,4 @@
-# Projet Ansible
+# Projet Evoque
 ## Sujet 
 ## Description
 - Créer un fichier d’inventaire et mettre l’IP d’une machine distante
