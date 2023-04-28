@@ -218,28 +218,7 @@ vim roles/apache2/tasks/main.yml
     state: restarted
   when: result.status != 200
 ```
---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## Description des taches:
-- Voici les tâches que nous avons ajouté :
-
-  Installation Apache2 : cette tâche utilise le module apt d'Ansible pour installer Apache2 sur la machine.
-
-  Afficher le résultat d'installation d'Apache2 : cette tâche utilise le module debug d'Ansible pour afficher le résultat de l'installation d'Apache2.
-
-  Vérifier si Apache2 est déjà installé : cette tâche utilise le module debug d'Ansible pour afficher un message indiquant qu'Apache2 est déjà installé si c'est le cas.
-
-  Redémarrer Apache2 : cette tâche utilise le module service d'Ansible pour redémarrer Apache2 si l'installation a été effectuée.
-
-  Vérifier si l'URL répond : cette tâche utilise le module uri d'Ansible pour vérifier si l'URL de localhost répond. Elle enregistre le résultat de la vérification dans la variable result.
-
-  Afficher un message si l'URL répond : cette tâche utilise le module debug d'Ansible pour afficher un message si l'URL répond.
-
-  Afficher un message d'erreur si l'URL ne répond pas : cette tâche utilise le module debug d'Ansible pour afficher un message d'erreur si l'URL ne répond pas.
-
-  Redémarrer le service Apache2 si l'URL ne répond pas : cette tâche utilise le module service d'Ansible pour redémarrer le service Apache2 si l'URL ne répond pas.
-  
---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Copy
 Attention il faut créer les fichiers esgi.jpg et index.j2 dans le dossier templates
@@ -272,19 +251,6 @@ classe: 4SRC2
 groupe: 5
 ```
 
---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-## Description des taches:
-Voici les tâches que nous avons mis en place :
-
-Copier l'image esgi.jpg dans le dossier /var/www/html : cette tâche utilise le module copy d'Ansible pour copier l'image esgi.jpg depuis le dossier templates vers le dossier /var/www/html.
-
-Copier le fichier index.j2 dans le dossier /var/www/html : cette tâche utilise le module template d'Ansible pour copier le fichier index.j2 depuis le dossier templates vers le dossier /var/www/html, en le transformant en fichier HTML.
-
-Nous avons ajouter les variables dans le fichier globalvars/all.yml en utilisant la commande ansible-vault edit. 
-Nous avons ajouté les variables classe et groupe avec les valeurs 4SRC2 et 5.
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 ## NTP
@@ -365,34 +331,6 @@ vim vars/main.yml
 ntp_file_config: /etc/ntp.conf
 ```
 
---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-## Description des taches:
-
-Voici les tâches que nous avons mis en place :
-
-Installation de ntp : Le module "ansible.builtin.apt" pour installer le paquet ntp et stocke le résultat dans la variable "result_ntp".
-
-show result_ntp : Le module "debug" pour afficher la valeur de la variable "result_ntp".
-
-Already installed : Le module "debug" pour afficher un message si ntp est déjà installé. Elle est conditionnée par le fait que le paquet n'a pas été installé pendant la tâche précédente.
-
-check file exist : Le module "stat" pour vérifier si le fichier de configuration de ntp existe. Le résultat est stocké dans la variable "check_file".
-
-Creation of the ntp file : Le module "file" pour créer le fichier de configuration de ntp avec les permissions 0644. Elle est conditionnée par le fait que le fichier n'existe pas déjà.
-
-Add NTP servers with a list and loop in the file : Le module "lineinfile" pour ajouter les serveurs ntp dans le fichier de configuration. Elle utilise une boucle "loop" pour parcourir la liste des serveurs ntp. Le résultat est stocké dans la variable "update_ntp".
-
-Check file update :  Le module "set_fact" pour définir une variable "change_status" à "true" si le fichier de configuration a été mis à jour. Elle utilise une boucle "loop" pour parcourir les résultats de la tâche précédente. Elle est conditionnée par le fait que la tâche précédente ait effectivement modifié le fichier.
-
-Restart ntp :Le module "service" pour redémarrer le service ntp. Elle est conditionnée par le fait que le paquet ntp a été installé ou que le fichier de configuration a été modifié.
-
-Nous avons ajouter les variables dans le fichier globalvars/all.yml en utilisant la commande ansible-vault edit. 
-Nous avons ajouté les variables ntp_server.
-
-nous allons ajouter le chemin du fichier ntp.conf en utilisant le fichier main.yml
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Firewall
 - Ouvrir le fichier main.yml dans le dossier firewall
@@ -427,21 +365,7 @@ vim roles/firewall/tasks/main.yml
     jump: ACCEPT
 ```
 
---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## Description des taches:
-
-Les tâches présente dans ce fichier sont les suivantes :
-
-Installation de iptables : Cette tâche utilise le module ansible.builtin.apt pour installer iptables si ce n'est pas déjà installé. Le résultat de cette tâche est enregistré dans la variable result_iptables.
-
-Affichage du résultat d'installation de iptables : Cette tâche utilise le module debug pour afficher le résultat de l'installation de iptables.
-
-Vérification de l'installation de iptables : Cette tâche utilise le module debug pour afficher un message si iptables est déjà installé.
-
-Autoriser le port 80 sur le pare-feu : Cette tâche utilise le module iptables pour ajouter une règle autorisant le trafic entrant sur le port 80. Le paramètre chain est défini sur "INPUT" pour spécifier que la règle s'applique au trafic entrant. Le paramètre protocol est défini sur "tcp" pour spécifier que la règle s'applique uniquement aux paquets TCP. Le paramètre destination_port est défini sur "80" pour spécifier le port à autoriser. Le paramètre jump est défini sur "ACCEPT" pour spécifier que les paquets doivent être acceptés.
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## User
 
@@ -475,23 +399,7 @@ users:
   - { Name: Mohamed, Password: mdp }
   - { Name: Maxime, Password: mdp }
 ```
---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## Description des taches:
-
-Les tâches présente dans ce fichier sont les suivantes :
-
-Elle utilise le module "user" pour créer un utilisateur
-Le nom de l'utilisateur est spécifié dans la liste des utilisateurs sous l'attribut "Name"
-Le mot de passe de l'utilisateur est spécifié dans la liste des utilisateurs sous l'attribut "Password"
-L'attribut "state" est défini sur "present" pour s'assurer que l'utilisateur est créé si ce n'est pas déjà le cas
-La tâche est exécutée pour chaque élément de la liste des utilisateurs grâce à la boucle "loop"
-L'attribut "no_log" est défini sur "true" pour que les noms d'utilisateur et les mots de passe ne soient pas enregistrés dans les journaux.
-
-Nous avons ajouter les variables dans le fichier globalvars/all.yml en utilisant la commande ansible-vault edit. 
-Nous avons ajouté les variables user + mots de passes
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Playbook
 - Ouvrir le fichier projet.yml et ajouter les roles
 ```bash
@@ -700,26 +608,6 @@ acdf1e1aa184   ansible/awx:17.1.0   "/usr/bin/tini -- /b…"   53 minutes ago   
 958e6fc63653   postgres:12          "docker-entrypoint.s…"   53 minutes ago   Up 53 minutes   5432/tcp                                awx_postgres
 89b2aaed9bc2   redis                "docker-entrypoint.s…"   53 minutes ago   Up 53 minutes   6379/tcp                                awx_redis
 ```
-
-
-Ces quatre conteneurs correspondent aux composants principaux d'AWX.
-
-Voici à quoi correspondent chaque conteneur :
-
-- awx_postgres : 
- Il s'agit du conteneur qui héberge la base de données PostgreSQL utilisée par AWX pour stocker toutes les informations relatives aux tâches, aux projets, aux inventaires et aux utilisateurs.
-
-- awx_redis : 
- Ce conteneur héberge le serveur de base de données Redis, qui stocke les informations de cache et de session d'AWX. Il est utilisé pour stocker les résultats de tâches et les connexions des utilisateurs.
-
-- awx_web : 
-Ce conteneur est responsable de la fourniture de l'interface web d'AWX. Il expose l'interface utilisateur d'AWX via un serveur web NGINX.
-
-- awx_task : 
-Ce conteneur est le moteur d'exécution des tâches d'AWX. Il est responsable de la prise en charge de la planification, de l'exécution et du suivi des tâches et des travaux dans AWX.
-
-En résumé, chacun de ces conteneurs joue un rôle clé dans le fonctionnement d'AWX et est nécessaire pour assurer le bon fonctionnement de la plateforme.
-
 
 
 Vous pouvez accéder à l'interface Web d'Ansible AWX via hostip ou hostname sur le port 80. Connectez-vous avec les informations d'identification définies dans le fichier d'inventaire.
