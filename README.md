@@ -35,6 +35,8 @@ ubuntu04|172.20.20.14| Client2      |
 - Docker 
 - Ubuntu
 - Python 
+- Docker et Docker Compose
+- Node et NPM
 
 ## Prérequis
 - python
