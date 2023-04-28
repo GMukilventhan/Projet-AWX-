@@ -22,7 +22,7 @@ la création de ces derniers
 
 ## Information 
 Machines |IP's       |Fonction | utilisé | 
-------  | -------    | -----   
+------  | -------    | -----   | -----   |
 ubuntu03|172.20.20.13| AWX / Ansible|✅ | 
 ubuntu05|172.20.20.15| Gitlab       | ✅ | 
 ubuntu02|172.20.20.12| Client1      | ✅ | 
