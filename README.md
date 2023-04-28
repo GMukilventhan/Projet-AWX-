@@ -1,21 +1,18 @@
 # Projet Evoque
 ## Sujet 
 ## Description
-- Créer un fichier d’inventaire et mettre l’IP d’une machine distante
-- Copier la clé SSH du serveur Ansible sur la machine distante (/root/.ssh/authorized_keys)
-- Créer un fichier de variable vault et le charger dans le playbook ci-dessous
-- Créer un playbook avec les rôles suivants :
-- Installer « apache2 » sur le serveur distant
-- Copier l’image esgi.jpg dans le dossier /var/www/html
-- Copier la template index.j2 dans le chemin /var/www/html/index.html
-- Installer le service « ntp »
-- Créerlefichier/etc/ntp.conf
-- Ajouter les serveurs NTP avec une liste et boucle dans /etc/ntp.conf
-- Autoriser le port 80 sur le firewall (iptables)
-- Créer une liste d’utilisateurs avec leur mot de passe et faire une boucle dessus pour
-la création de ces derniers
-- [BONUS] Vérifier que l’URL répond et mettre un message (debug/fail) en fonction du résultat de la vérification
-
+- [ ]  Créer un fichier d’inventaire et mettre l’IP d’une machine distante
+- [ ]  Copier la clé SSH du serveur Ansible sur la machine distante (/root/.ssh/authorized_keys)
+- [ ]  Créer un fichier de variable vault et le charger dans le playbook ci-dessous
+- [ ]  Installer « apache2 » sur le serveur distant
+- [ ]  Copier l’image esgi.jpg dans le dossier /var/www/html
+- [ ]  Copier la template index.j2 dans le chemin /var/www/html/index.html
+- [ ]  Installer le service « ntp »
+- [ ]  Créer le fichier /etc/ntp.conf
+- [ ]  Ajouter les serveurs NTP avec une liste et boucle dans /etc/ntp.conf
+- [ ]  Autoriser le port 80 sur le firewall (iptables)
+- [ ]  Créer une liste d’utilisateurs avec leur mot de passe et faire une boucle dessus pour la création de ces derniers
+- [ ]  Vérifier que l’URL répond et mettre un message (debug/fail) en fonction du résultat de la vérification
 ## Documentation
 
 [Documentation Ansible](https://docs.ansible.com/)
