@@ -1,3 +1,0 @@
----
-# vars file for roles/ntp
-ntp_file_config: /etc/ntp.conf
