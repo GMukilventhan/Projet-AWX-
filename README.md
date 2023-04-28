@@ -32,7 +32,7 @@ Ubuntu07|172.20.20.17| Client4      | ✅ | |
 Ubuntu08|172.20.20.18| Client5      |    | |
 Ubuntu09|172.20.20.19| Client6      |    | |
 Ubuntu01|172.20.20.11| Client7      |    | |
-
+Ubuntu10|172.20.20.20| Client8      |    | |
 ## Techno:
 
 - Ansible / AWX
