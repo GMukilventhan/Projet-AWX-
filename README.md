@@ -26,10 +26,10 @@ Ubuntu02|172.20.20.12| Client1      | ✅ | |
 Ubuntu04|172.20.20.14| Client2      | ✅ | |
 Ubuntu06|172.20.20.16| Client3      | ✅ | |
 Ubuntu07|172.20.20.17| Client4      | ✅ | |
-Ubuntu08|172.20.20.18| Client5      |    | |
-Ubuntu09|172.20.20.19| Client6      |    | |
-Ubuntu01|172.20.20.11| Client7      |    | |
-Ubuntu10|172.20.20.20| Client8      |    | |
+Ubuntu08|172.20.20.18| Client5      | Faire avec le prof    | |
+Ubuntu09|172.20.20.19| Client6      |  Faire avec le prof   | |
+Ubuntu01|172.20.20.11| Client7      | Faire avec le prof   | |
+Ubuntu10|172.20.20.20| Client8      |  Faire avec le prof  | |
 ## Techno:
 
 - Ansible / AWX
