@@ -85,7 +85,7 @@ vim ansible.cfg
 inventory =./inventory
 log_path =./logfile.log
 vault_password_file = /root/ansible
-#remote_user = root
+remote_user = root
 ```
 
 - Attention sur la machine client faut faire la modification suivante
