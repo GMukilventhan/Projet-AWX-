@@ -1,4 +1,4 @@
-# Projet Evoque
+# Projet Evoque - GROUPE 5 - 4SRC2
 ## Sujet 
 ## Description
 - [ ]  Créer un fichier d’inventaire et mettre l’IP d’une machine distante
