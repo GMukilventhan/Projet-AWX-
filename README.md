@@ -26,7 +26,7 @@ Machines |IP's       |Fonction |
 ubuntu03|172.20.20.13| AWX / Ansible| 
 ubuntu05|172.20.20.15| Gitlab       | 
 ubuntu02|172.20.20.12| Client1      | 
-ubuntu04|172.20.20.14| Client3      | 
+ubuntu04|172.20.20.14| Client2      | 
 
 ## Techno:
 
@@ -821,7 +821,7 @@ root@git:/etc/apt/sources.list.d# cat /etc/gitlab/initial_root_password
 #
 #          If the password shown here doesn't work, you must reset the admin password following https://docs.gitlab.com/ee/security/reset_user_password.html#reset-your-root-password.
 
-Password: Ym0cHhYK/ENJM8X/aMdo94SuNAhWMBVgb1C/U1fAUNY=
+Password: hEzCj61bRNbvxugI0IvdbdZi3qfap3yxFHwqhUpkzuw=
 
 # NOTE: This file will be automatically deleted in the first reconfigure run after 24 hours.
 ```
@@ -1194,7 +1194,7 @@ PLAY RECAP *********************************************************************
 - 🧑🏽‍💻 [GEORGE Mukilventhan](https://github.com/GMukilventhan) 🧑🏽‍💻
 - 👨🏻‍💻 [PAYEN Théo](https://github.com/theo-payen) 👨🏻‍💻
 - 👨🏻‍💻[WAZANE Mohamed](https://github.com/mowazane) 👨🏻‍💻
-- 👨 [HABERMANN Maxime](https://github.com/MaximeHab) 👨🏻‍💻
+- 👨🏻‍💻 [HABERMANN Maxime](https://github.com/MaximeHab) 👨🏻‍💻
 
 
  
