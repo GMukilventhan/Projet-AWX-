@@ -21,17 +21,17 @@ la création de ces derniers
 [Documentation Ansible](https://docs.ansible.com/)
 
 ## Information 
-Machines |IP's       |Fonction | utilisé
+Machines |IP's       |Fonction | utilisé | 
 ------  | -------    | -----   
 ubuntu03|172.20.20.13| AWX / Ansible|✅ | 
 ubuntu05|172.20.20.15| Gitlab       | ✅ | 
 ubuntu02|172.20.20.12| Client1      | ✅ | 
 ubuntu04|172.20.20.14| Client2      | ✅ | 
 ubuntu06|172.20.20.16| Client3      | ✅ | 
-ubuntu07|172.20.20.17| Client4      |  | 
-ubuntu08|172.20.20.18| Client5      |  | 
-ubuntu09|172.20.20.19| Client6      |  | 
-ubuntu02|172.20.20.12| Client7      |  | 
+ubuntu07|172.20.20.17| Client4      |    | 
+ubuntu08|172.20.20.18| Client5      |    | 
+ubuntu09|172.20.20.19| Client6      |    | 
+ubuntu02|172.20.20.12| Client7      |    | 
 
 ## Techno:
 
