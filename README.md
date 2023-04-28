@@ -31,7 +31,7 @@ ubuntu06|172.20.20.16| Client3      | ✅ |
 ubuntu07|172.20.20.17| Client4      |    | 
 ubuntu08|172.20.20.18| Client5      |    | 
 ubuntu09|172.20.20.19| Client6      |    | 
-ubuntu02|172.20.20.12| Client7      |    | 
+ubuntu01|172.20.20.11| Client7      |    | 
 
 ## Techno:
 
