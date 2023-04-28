@@ -1,0 +1,50 @@
+---
+# tasks file for roles/apache2
+
+- name: Installation Apache2
+  #become: true
+  ansible.builtin.apt:
+    name: apache2
+    state: present
+  register: result_apache2
+
+- name: show result_apache2
+  debug:
+    var: result_apache2
+
+- name: Already installed
+  debug:
+    msg: "Apache2 is already installed"
+  when: result_apache2.changed == false
+
+- name: Restart Apache2
+  service:
+    name: apache2
+    state: restarted
+  when: result_apache2.changed == true
+
+- name: "Check that the URL responds"
+  ansible.builtin.uri:
+    url: http://localhost
+    status_code: 200
+    return_content: yes
+  register: result
+  ignore_errors: yes
+  failed_when: false
+
+- name: "debug message"
+  debug:
+    msg: "The URL answers"
+  when: result.status == 200
+
+- name: "Error message"
+  debug:
+    msg: "The URL does not respond"
+  when: result.status != 200
+
+    #bonus redemémarrer le service en cas de down
+- name: "Restart service after URL ko"
+  service:
+    name: apache2
+    state: restarted
+  when: result.status != 200
