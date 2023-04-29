@@ -17,7 +17,7 @@
 
 [Documentation Ansible](https://docs.ansible.com/)
 
-## Information 
+## Information
 Machines |IP's       |Fonction | utilisé | URL |
 ------  | -------    | -----   | -----   | -----|
 Ubuntu03|172.20.20.13| AWX / Ansible|✅ | http://awx.starckindustrie.fr/#/home    |
@@ -30,7 +30,14 @@ Ubuntu08|172.20.20.18| Client5      | Faire avec le prof    | |
 Ubuntu09|172.20.20.19| Client6      |  Faire avec le prof   | |
 Ubuntu01|172.20.20.11| Client7      | Faire avec le prof   | |
 Ubuntu10|172.20.20.20| Client8      |  Faire avec le prof  | |
-## Techno:
+
+## Auteurs
+- 🧑🏽‍💻 [GEORGE Mukilventhan](https://github.com/GMukilventhan) 🧑🏽‍💻
+- 👨🏻‍💻 [PAYEN Théo](https://github.com/theo-payen) 👨🏻‍💻
+- 👨🏻‍💻[WAZANE Mohamed](https://github.com/mowazane) 👨🏻‍💻
+- 👨🏻‍💻 [HABERMANN Maxime](https://github.com/MaximeHab) 👨🏻‍💻
+
+## Techno & OS
 
 - Ansible / AWX
 - Gitlab 
@@ -1082,11 +1089,6 @@ PLAY RECAP *********************************************************************
 
 ```
 
-## Auteurs
-- 🧑🏽‍💻 [GEORGE Mukilventhan](https://github.com/GMukilventhan) 🧑🏽‍💻
-- 👨🏻‍💻 [PAYEN Théo](https://github.com/theo-payen) 👨🏻‍💻
-- 👨🏻‍💻[WAZANE Mohamed](https://github.com/mowazane) 👨🏻‍💻
-- 👨🏻‍💻 [HABERMANN Maxime](https://github.com/MaximeHab) 👨🏻‍💻
 
 
  
