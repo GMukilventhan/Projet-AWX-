@@ -20,16 +20,16 @@
 ## Information
 Machines |IP's       |Fonction | utilisé | URL |
 ------  | -------    | -----   | -----   | -----|
-Ubuntu03|172.20.20.13| AWX / Ansible|✅ | http://awx.starckindustrie.fr/#/home    |
-Ubuntu05|172.20.20.15| Gitlab       | ✅ | http://gitlab.starckindustrie.fr/ |
-Ubuntu02|172.20.20.12| Client1      | ✅ | |
-Ubuntu04|172.20.20.14| Client2      | ✅ | |
-Ubuntu06|172.20.20.16| Client3      | ✅ | |
-Ubuntu07|172.20.20.17| Client4      | ✅ | |
-Ubuntu08|172.20.20.18| Client5      | Faire avec le prof    | |
-Ubuntu09|172.20.20.19| Client6      |  Faire avec le prof   | |
-Ubuntu01|172.20.20.11| Client7      | Faire avec le prof   | |
-Ubuntu10|172.20.20.20| Client8      |  Faire avec le prof  | |
+Ubuntu03|X.X.X.X| AWX / Ansible|✅ | http://awx.starckindustrie.fr/#/home    |
+Ubuntu05|X.X.X.X| Gitlab       | ✅ | http://gitlab.starckindustrie.fr/ |
+Ubuntu02|X.X.X.X| Client1      | ✅ | |
+Ubuntu04|X.X.X.X| Client2      | ✅ | |
+Ubuntu06|X.X.X.X| Client3      | ✅ | |
+Ubuntu07|X.X.X.X| Client4      | ✅ | |
+Ubuntu08|X.X.X.X| Client5      | Faire avec le prof    | |
+Ubuntu09|X.X.X.X| Client6      |  Faire avec le prof   | |
+Ubuntu01|X.X.X.X| Client7      | Faire avec le prof   | |
+Ubuntu10|X.X.X.X| Client8      |  Faire avec le prof  | |
 
 ## Auteurs
 - 🧑🏽‍💻 [GEORGE Mukilventhan](https://github.com/GMukilventhan) 🧑🏽‍💻
